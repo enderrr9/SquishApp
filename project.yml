@@ -1,0 +1,45 @@
+name: Squish
+options:
+  bundleIdPrefix: com.squishvideo
+  deploymentTarget:
+    iOS: "16.4"
+targets:
+  Squish:
+    type: application
+    platform: iOS
+    sources:
+      - path: Sources
+      - path: Resources
+    info:
+      path: Support/Info.plist
+      properties:
+        CFBundleDisplayName: Squish
+        CFBundleShortVersionString: "$(MARKETING_VERSION)"
+        CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
+        LSRequiresIPhoneOS: true
+        ITSAppUsesNonExemptEncryption: false
+        UILaunchScreen:
+          UIColorName: LaunchBackground
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        NSPhotoLibraryAddUsageDescription: Squish saves your finished videos to Photos.
+        NSPhotoLibraryUsageDescription: Squish lets you pick a video from your library.
+        NSCameraUsageDescription: Squish lets you record a video to squish.
+        NSMicrophoneUsageDescription: Squish records sound when you film a video to squish.
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.squishvideo.app
+        MARKETING_VERSION: "1.0"
+        CURRENT_PROJECT_VERSION: "1"
+        TARGETED_DEVICE_FAMILY: "1,2"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        SWIFT_VERSION: "5.0"
+        CODE_SIGNING_ALLOWED: "NO"
+    scheme: {}
